@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       tl.fromTo(
         ".sc-benefit .benefit-list li:first-child .img",
         { y: 60, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2, ease: "power3.inOut" }
+        { y: 0, opacity: 1, duration: 1.2, ease: "power3.out" }
       ).fromTo(
         ".sc-benefit .benefit-list li:first-child .msg",
         { opacity: 0, y: 20, scale: 1 },
