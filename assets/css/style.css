@@ -9,6 +9,7 @@
 
 /* sc-main */
 .sc-main {
+  background-color: #000;
 }
 .sc-main .main-intro {
   display: flex;
@@ -28,11 +29,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #fff;
+  opacity: 0;
 }
-
 .sc-main .main-intro .logo {
-}
-.sc-main .main-intro .logo img {
 }
 .sc-main .main-intro .main-title {
   font-family: "HakgyoansimBunpilR";
@@ -48,7 +47,23 @@
   font-weight: 500;
   font-size: 1.5rem;
   color: #fff;
+  animation: scroll-motion 2s infinite;
 }
+@keyframes scroll-motion {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    transform: translateY(30%);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease-in-out;
+  }
+}
+
 .sc-main .main-intro .scroll::after {
   content: "";
   display: block;
@@ -94,7 +109,29 @@
   width: 0.3rem;
   height: 0.3rem;
   border-radius: 50%;
+  opacity: 0;
   background-color: #000;
+  animation: dot-fade 2s ease-in-out infinite;
+}
+.sc-main .main-desc .motion-wrap .dot-list .dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.sc-main .main-desc .motion-wrap .dot-list .dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.sc-main .main-desc .motion-wrap .dot-list .dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+@keyframes dot-fade {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* sc-program */
@@ -309,6 +346,11 @@
   font-size: 2.8rem;
   color: #fff;
   background-color: #000;
+  overflow: hidden;
+}
+.sc-intro .sc-title .char {
+  display: inline-block;
+  opacity: 0;
 }
 .sc-intro .intro {
   padding: 8.8rem 0 6.4rem;
@@ -337,24 +379,29 @@
   gap: 1.6rem;
 }
 .sc-intro .intro-list li {
+  opacity: 0;
+  transform: translateY(3rem);
+}
+.sc-intro .intro-list li span {
+  display: block;
   padding: 0.8rem 2rem;
   line-height: 1.2;
   border-radius: 1.4rem;
   background-color: #c7ff69;
 }
-.sc-intro .intro-list li:nth-child(2) {
+.sc-intro .intro-list li:nth-child(2) span {
   opacity: 0.8;
 }
-.sc-intro .intro-list li:nth-child(3) {
+.sc-intro .intro-list li:nth-child(3) span {
   opacity: 0.6;
 }
-.sc-intro .intro-list li:nth-child(4) {
+.sc-intro .intro-list li:nth-child(4) span {
   opacity: 0.4;
 }
-.sc-intro .intro-list li:nth-child(5) {
+.sc-intro .intro-list li:nth-child(5) span {
   opacity: 0.2;
 }
-.sc-intro .intro-list li:nth-child(6) {
+.sc-intro .intro-list li:nth-child(6) span {
   opacity: 0.1;
 }
 
@@ -417,6 +464,17 @@
   background-image: url("../images/ico_offer_union.svg");
   background-repeat: no-repeat;
   background-size: contain;
+  opacity: 0;
+  animation: fadeInOut 2.5s ease-in-out infinite;
+}
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 .sc-offer .sub-title {
   margin-bottom: 8.8rem;
@@ -429,6 +487,7 @@
   position: fixed;
   left: 50%;
   bottom: 6rem;
+  z-index: 50;
   transform: translateX(-50%);
   max-width: 60rem;
   width: 100%;

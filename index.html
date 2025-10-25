@@ -143,7 +143,6 @@
             <li>
               <h3 class="title">운동 향상도를<br>자세히 알 수 있어요</h3>
               <div class="img">
-                <!-- <img src="./assets/images/img_benefit02.png" alt="운동 향상도"> -->
               </div>
             </li>
           </div>
@@ -157,12 +156,12 @@
             <h3 class="title">전국 약 9,000명<br>시니어 운동 전문가</h3>
             <p class="sub-title">자격증 확인, 대면 면접, 범죄 이력 조회까지 거친<br>선별된 전문가가 함께합니다.</p>
             <ul class="intro-list">
-              <li>대한운동사협회</li>
-              <li>미국스포츠의학회 노인 피트니스 전문가</li>
-              <li>생활스포츠지도사 2급</li>
-              <li>국제스포츠과학협회 시니어 전문가</li>
-              <li>물리치료사</li>
-              <li>작업치료사</li>
+              <li><span>대한운동사협회</span></li>
+              <li><span>미국스포츠의학회 노인 피트니스 전문가</span></li>
+              <li><span>생활스포츠지도사 2급</span></li>
+              <li><span>국제스포츠과학협회 시니어 전문가</span></li>
+              <li><span>물리치료사</span></li>
+              <li><span>작업치료사</span></li>
             </ul>
           </div>
         </section>
@@ -228,34 +227,24 @@
           <p class="sub-title">앱 출시 소식을 가장 먼저 받아 보세요</p>
         </section>
         <!-- //sc-offer e -->
+
+        <!-- btn-flotting -->
         <div class="btn-area">
-        <a href="#" class="btn-flotting">무료로 사전 등록</a>
+          <a href="#" class="btn-flotting">무료로 사전 등록</a>
         </div>
+        <!-- //btn-flotting -->
       </main>
     </div>
     <!-- //container -->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <!-- gsap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", (event) => {
-        const swiper = new Swiper(".swiper-container .swiper", {
-          slidesPerView: 'auto',
-          spaceBetween: 12,
-        });   
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="./assets/js/script.js"></script>
 
-        gsap.registerPlugin(
-          ScrollTrigger,
-          ScrollSmoother,
-          ScrollToPlugin,
-          SplitText
-        );
-      });
-    </script>
   </body>
 </html>
