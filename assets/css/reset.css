@@ -108,14 +108,15 @@ html {
 }
 body {
   overflow-x: hidden;
-  line-height: 1.4;
+  line-height: 1.5;
   font-family: "FreesentationVF";
   font-weight: 500;
   font-size: 1.6rem;
   word-break: keep-all;
 }
 ol,
-ul {
+ul,
+li {
   list-style: none;
 }
 blockquote,
@@ -135,27 +136,9 @@ table {
 }
 a {
   text-decoration: none;
-  color: #fff;
+  color: inherit;
 }
 img {
   display: block;
   max-width: 100%;
-}
-button {
-  padding: 0;
-  border: 0;
-  font-family: "FreesentationVF";
-  background: none;
-  cursor: pointer;
-}
-input {
-  font-family: "FreesentationVF";
-  border: none;
-  outline: none;
-}
-textarea {
-  resize: none;
-  outline: none;
-  border: none;
-  font-family: "FreesentationVF";
 }
