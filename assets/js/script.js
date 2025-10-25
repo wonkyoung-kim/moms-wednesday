@@ -1,23 +1,19 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   // GSAP
   gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(SplitText);
 
   const tl = gsap.timeline();
 
   tl.fromTo(
     ".logo",
     { scale: 40, opacity: 0 },
-    { scale: 1, opacity: 1, duration: 2.5, ease: "power1.inOut" }
+    { scale: 1, opacity: 1, duration: 2, ease: "power1.out" }
   )
-
     .to(
       ".main-intro",
       { opacity: 1, filter: "blur(0px)", duration: 1, ease: "power1.out" },
       "-=0.8"
     )
-    .from(".bg", { filter: "blur(10px)" }, "<")
-
     .fromTo(
       ".btn-flotting",
       { opacity: 0, y: 20 },
