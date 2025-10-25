@@ -9,11 +9,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     { scale: 40, opacity: 0 },
     { scale: 1, opacity: 1, duration: 2, ease: "power1.out" }
   )
-    .to(
-      ".main-intro",
-      { opacity: 1, filter: "blur(0px)", duration: 1, ease: "power1.out" },
-      "-=0.8"
-    )
+    .to(".main-intro", { opacity: 1, duration: 1, ease: "power1.out" }, "-=0.8")
     .fromTo(
       ".btn-flotting",
       { opacity: 0, y: 20 },
