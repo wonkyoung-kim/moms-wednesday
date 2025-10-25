@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   ScrollTrigger.create({
     trigger: ".sc-intro",
-    start: "top 70%",
+    start: "top 50%",
     onEnter: () => {
       gsap.to(".intro-list li", {
         y: 0,
