@@ -17,6 +17,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
       "+=0.03"
     );
 
+  ScrollTrigger.create({
+    trigger: ".sc-offer", // 기준 섹션
+    start: "top bottom", // 섹션 하단이 뷰포트 하단에 닿을 때
+    onEnter: () => {
+      gsap.set(".btn-flotting", {
+        position: "absolute",
+        bottom: "0",
+        left: "50%",
+        transform: "translateX(-50%)",
+      });
+    },
+    onLeaveBack: () => {
+      gsap.set(".btn-flotting", {
+        position: "fixed",
+        bottom: "6rem",
+        left: "50%",
+        transform: "translateX(-50%)",
+      });
+    },
+  });
+  ScrollTrigger.create({
+    trigger: ".sc-offer",
+    start: "top bottom",
+    end: "bottom bottom",
+  });
+
   // sc-program
   ScrollTrigger.create({
     trigger: ".sc-program",

@@ -486,17 +486,18 @@
 }
 
 .btn-area {
+  position: relative;
+}
+.btn-flotting {
   position: fixed;
   left: 50%;
   bottom: 6rem;
   z-index: 50;
   transform: translateX(-50%);
-  max-width: 60rem;
+  max-width: 56rem;
   width: 100%;
   padding: 0 2rem;
   box-sizing: border-box;
-}
-.btn-flotting {
   display: block;
   line-height: 6rem;
   border-radius: 2rem;
