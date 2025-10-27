@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
               duration: 1,
               repeat: -1,
               yoyo: true,
-              ease: "sine.inOut",
+              ease: "linear",
               stagger: 0.15,
             });
           },
