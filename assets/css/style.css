@@ -3,7 +3,7 @@
 @import "reset.css";
 @import "common.css";
 
-.section:not(.sc-main, .sc-benefit, .sc-intro) {
+.section:not(.sc-main, .sc-benefit, .sc-intro, .sc-offer) {
   padding: 6rem 2rem;
 }
 
@@ -449,6 +449,7 @@
 
 /* sc-offer */
 .sc-offer {
+  padding: 6rem 0;
   text-align: center;
   background-color: #a8a6ff;
 }
@@ -495,7 +496,7 @@
   z-index: 50;
   transform: translateX(-50%);
   max-width: 56rem;
-  width: 100%;
+  width: calc(100% - 4rem);
   padding: 0 2rem;
   box-sizing: border-box;
   display: block;
