@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     trigger: ".sc-benefit",
     start: "top top",
     once: true,
-    delay: 0.8,
+    delay: 1,
     onEnter: () => {
       const tl = gsap.timeline();
 
