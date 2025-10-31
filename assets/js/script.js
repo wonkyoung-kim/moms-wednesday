@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   ScrollTrigger.create({
     trigger: ".sc-offer",
-    start: "top 60%", // 시작 느슨하게
+    start: "top 70%", // 시작 느슨하게
     end: "bottom bottom", // 끝 느슨하게
     onEnter: () => {
       setFloating("absolute", "0");
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     trigger: ".sc-benefit",
     start: "top top",
     once: true,
-    delay: 1,
+    delay: 2,
     onEnter: () => {
       const tl = gsap.timeline();
 
