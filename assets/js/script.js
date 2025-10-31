@@ -2,12 +2,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // GSAP
   gsap.registerPlugin(ScrollTrigger);
 
+  gsap.set(".btn-floating", {
+    opacity: 0,
+    y: 30,
+    position: "fixed",
+    bottom: "2rem",
+  });
+
   ScrollTrigger.create({
     start: "top -200", // 페이지 상단에서 200px 스크롤 시
     onEnter: () =>
-      gsap.to(".btn-flotting", { opacity: 1, y: 0, duration: 0.5 }),
+      gsap.to(".btn-floating", { opacity: 1, y: 0, duration: 0.5 }),
     onLeaveBack: () =>
-      gsap.to(".btn-flotting", { opacity: 0, y: 30, duration: 0.5 }),
+      gsap.to(".btn-floating", { opacity: 0, y: 30, duration: 0.5 }),
   });
 
   ScrollTrigger.create({
@@ -33,7 +40,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
   function setFloating(position, bottom) {
-    gsap.set(".btn-flotting", { position, bottom });
+    gsap.set(".btn-floating", { position, bottom });
   }
 
   window.addEventListener("load", () => {
