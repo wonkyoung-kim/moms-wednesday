@@ -2,50 +2,74 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // GSAP
   gsap.registerPlugin(ScrollTrigger);
 
-  const tl = gsap.timeline();
-
-  tl.fromTo(
-    ".logo",
-    { scale: 40, opacity: 0 },
-    { scale: 1, opacity: 1, duration: 2, ease: "power1.out" }
-  )
-    .to(".main-intro", { opacity: 1, duration: 1, ease: "power1.out" }, "-=0.8")
-    .fromTo(
-      ".btn-flotting",
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-      "+=0.03"
-    );
+  ScrollTrigger.create({
+    start: "top -200", // 페이지 상단에서 200px 스크롤 시
+    onEnter: () =>
+      gsap.to(".btn-flotting", { opacity: 1, y: 0, duration: 0.5 }),
+    onLeaveBack: () =>
+      gsap.to(".btn-flotting", { opacity: 0, y: 30, duration: 0.5 }),
+  });
 
   ScrollTrigger.create({
     trigger: ".sc-offer",
-    start: "top bottom",
-    end: "bottom bottom",
+    start: "top bottom", // 시작 느슨하게
+    end: "bottom bottom", // 끝 느슨하게
     onEnter: () => {
-      gsap.set(".btn-flotting", {
-        position: "fixed",
-        bottom: "6rem",
-      });
+      console.log("ENTER");
+      setFloating("absolute", "0");
     },
     onLeave: () => {
-      gsap.set(".btn-flotting", {
-        position: "absolute",
-        bottom: "0",
-      });
+      console.log("LEAVE");
+      setFloating("absolute", "0");
     },
     onEnterBack: () => {
-      gsap.set(".btn-flotting", {
-        position: "fixed",
-        bottom: "6rem",
-      });
+      console.log("ENTER BACK");
+      setFloating("fixed", "2rem");
     },
     onLeaveBack: () => {
-      gsap.set(".btn-flotting", {
-        position: "fixed",
-        bottom: "6rem",
-      });
+      console.log("LEAVE BACK");
+      setFloating("fixed", "2rem");
     },
   });
+
+  function setFloating(position, bottom) {
+    gsap.set(".btn-flotting", { position, bottom });
+  }
+
+  window.addEventListener("load", () => {
+    setTimeout(() => ScrollTrigger.refresh(), 500);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+  const icon = document.querySelector(".icon2");
+
+  const tl = gsap.timeline({
+    repeat: -1,
+    defaults: { ease: "sine.inOut" },
+  });
+
+  dots.forEach((dot, i) => {
+    tl.to(
+      dot,
+      {
+        y: -8,
+        duration: 0.4,
+        yoyo: true,
+        repeat: 1,
+      },
+      i * 0.15
+    );
+  });
+  tl.to(
+    icon,
+    {
+      y: -10,
+      duration: 0.5,
+      yoyo: true,
+      repeat: 1,
+    },
+    "-=0.25"
+  );
 
   // sc-program
   ScrollTrigger.create({
@@ -102,6 +126,42 @@ document.addEventListener("DOMContentLoaded", (event) => {
     },
   });
 
+  const path = document.querySelector(".graph-stroke");
+  const length = path.getTotalLength();
+
+  // 초기 상태 (선이 안 보이게)
+  gsap.set(path, {
+    strokeDasharray: length,
+    strokeDashoffset: length,
+  });
+  gsap.set(".graph-fill", { opacity: 0 });
+
+  ScrollTrigger.create({
+    trigger: ".sc-benefit",
+    start: "top top",
+    once: true,
+    delay: 0.8,
+    onEnter: () => {
+      const tl = gsap.timeline();
+
+      tl.to(path, {
+        strokeDashoffset: 0,
+        duration: 3.2,
+        ease: "power2.out",
+      });
+
+      tl.to(
+        ".graph-fill",
+        {
+          opacity: 0.4,
+          duration: 1.8,
+          ease: "power1.out",
+        },
+        "-=2"
+      );
+    },
+  });
+
   // sc-intro
   const split = new SplitType(".sc-intro .sc-title", {
     types: "chars",
@@ -144,6 +204,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         y: 0,
         opacity: 1,
         duration: 0.8,
+        delay: 0.6,
         ease: "none",
         stagger: 0.3, // 하나씩 자연스럽게
       });
