@@ -19,22 +19,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   ScrollTrigger.create({
     trigger: ".sc-offer",
-    start: "top bottom", // 시작 느슨하게
+    start: "top 60%", // 시작 느슨하게
     end: "bottom bottom", // 끝 느슨하게
     onEnter: () => {
-      console.log("ENTER");
       setFloating("absolute", "0");
     },
     onLeave: () => {
-      console.log("LEAVE");
       setFloating("absolute", "0");
     },
     onEnterBack: () => {
-      console.log("ENTER BACK");
       setFloating("fixed", "2rem");
     },
     onLeaveBack: () => {
-      console.log("LEAVE BACK");
       setFloating("fixed", "2rem");
     },
   });
