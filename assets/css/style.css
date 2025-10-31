@@ -304,8 +304,9 @@
 }
 .sc-benefit li:nth-child(2) .img svg {
   position: absolute;
-  left: 0;
+  left: 0.7rem;
   bottom: 2rem;
+  width: 95%;
 }
 .sc-benefit li .msg-group {
   display: flex;
