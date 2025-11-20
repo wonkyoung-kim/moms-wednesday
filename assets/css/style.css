@@ -32,8 +32,6 @@
   background-position: center;
   background-color: #fff;
 }
-.sc-main .main-intro .logo {
-}
 .sc-main .main-intro .main-title {
   font-family: "HakgyoansimBunpilR";
   font-size: 2.8rem;
@@ -114,10 +112,6 @@
 }
 
 /* sc-program */
-.sc-program {
-}
-.sc-program .program-list {
-}
 .sc-program .program-list > li + li {
   margin-top: 8rem;
 }
@@ -212,8 +206,6 @@
 }
 
 /* sc-benefit */
-.sc-benefit {
-}
 .sc-benefit li {
   position: relative;
 }
@@ -323,8 +315,6 @@
 }
 
 /* sc-intro */
-.sc-intro {
-}
 .sc-intro .sc-title {
   padding: 6rem 4rem;
   font-family: "HakgyoansimBunpilR";
@@ -391,8 +381,6 @@
 }
 
 /* sc-review */
-.sc-review {
-}
 .sc-review .title {
   font-weight: 700;
   font-size: 2.2rem;
@@ -415,8 +403,6 @@
   flex-shrink: 0;
   width: 7.2rem;
   height: 7.2rem;
-}
-.sc-review .review-list li .review {
 }
 .sc-review .review-list li .review strong {
   display: block;
